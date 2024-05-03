@@ -1,0 +1,10 @@
+; BLOCK TRANSFER OVRLP
+MOV R0, 10H
+MOV R1, 11H
+MOV R3, #04H
+LOOP:    MOV A, @R0
+        MOV @R1, A
+        DEC R0
+        DEC R1
+        DJNZ R3, LOOP
+END

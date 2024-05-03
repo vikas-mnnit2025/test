@@ -1,0 +1,57 @@
+A51 MACRO ASSEMBLER  Q2                                                                   04/02/2024 16:01:53 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\q2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE q2.a51 SET(SMALL) DEBUG PRINT(.\Listings\q2.lst) OBJECT(.\Objects\q2.ob
+                      j) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;16 BIT ADDITION
+                       2     
+0000 7810              3     MOV R0, #010H
+0002 7911              4     MOV R1, #011H
+0004 7B20              5     MOV R3, #020H
+0006 7C21              6     MOV R4, #021H
+                       7     
+0008 7D00              8     MOV R5, #00H
+000A 7400              9     MOV A, #00H
+                      10     
+000C 2C               11     ADD A, R4
+000D 29               12     ADD A, R1
+                      13     
+000E 5001             14     JNC SKIP1
+0010 0D               15     INC R5
+0011 F580             16     SKIP1:   MOV P0, A
+0013 7400             17              MOV A, #00H
+0015 2B               18              ADD A, R3
+0016 2D               19              ADD A, R5
+0017 4002             20              JC SKIP2
+0019 7D00             21              MOV R5, #00H
+001B 28               22              SKIP2:    ADD A, R0
+001C 5001             23                        JNC SKIP3
+001E 0D               24                        INC R5
+001F F590             25                        SKIP3:    MOV P1, A
+0021 8DB0             26     MOV P3, R5
+                      27     END
+A51 MACRO ASSEMBLER  Q2                                                                   04/02/2024 16:01:53 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+SKIP1. . . . . . .  C ADDR   0011H   A   
+SKIP2. . . . . . .  C ADDR   001BH   A   
+SKIP3. . . . . . .  C ADDR   001FH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

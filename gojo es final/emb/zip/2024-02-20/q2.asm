@@ -1,0 +1,16 @@
+; BLOCK TRANSFER NON OVERLAP
+MOV R0, #10h
+MOV R1, #20h
+MOV R2, #04h
+
+loop:
+	MOV A, @R0
+	MOV @R1, A
+	MOV @R0, #00h
+	INC R0
+	INC R1
+	DJNZ R2, loop
+
+stop:
+SJMP stop
+END

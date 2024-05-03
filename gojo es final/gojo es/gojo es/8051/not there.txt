@@ -1,0 +1,5 @@
+               
+   3. Write an assembly language program to print Binary Pattern on   the Port 1
+Write an assembly program that displays the binary pattern from 0 to 255 (and back to 0) on the LEDs interfaced with port 1.
+Write a program to display message on the LCD of 8051 microcontroller  
+Write a program to display your name on the LCD of 8051 microcontroller 

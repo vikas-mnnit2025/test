@@ -1,0 +1,22 @@
+; PRIME
+ORG 0000H
+MOV A,10H
+MOV R1,A
+MOV R3,#00H
+
+LOOP:	MOV B,R1
+			DIV AB
+			MOV R2,B
+			CJNE R2,#00H,L1
+			INC R3
+
+L1:	MOV A,10H
+		DJNZ R1, LOOP
+		CJNE R3,#02H,L2
+		MOV 20H,#01H
+		JMP L3
+
+L2:	MOV 20H,#00H
+L3: 
+END
+                 
